@@ -101,6 +101,8 @@ namespace DiffVisualizer
                     List<string> add = new List<string>();
                     foreach (string line in result.Split(new[] { '\n' }))
                     {
+                        if (string.IsNullOrEmpty(line)) continue;
+
                         countlineheader--;
                         if (line.Length > 12 && line.Substring(0, 11) == @"diff --git ")
                         {
